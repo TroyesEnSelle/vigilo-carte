@@ -49,7 +49,7 @@
 
 	<script>
 
-		const URL_VIGILO = "https://api.vigilo.troyesenselle.fr"
+		const URL_VIGILO = "http://api.vigilo.troyesenselle.fr"
 
 		var mapbox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoiem91YmlkZGFhYSIsImEiOiItbk16UXlNIn0.DVKhF_zYdBhplHVSK_R71w', {
 			maxZoom: 22,
@@ -228,7 +228,7 @@
 		layer.bindPopup(popupContent,customOptions);
 	}
 
-		var mappos = L.Permalink.getMapLocation({zoom: 13, center: [48.2973,4.0746]})
+		var mappos = L.Permalink.getMapLocation();
 
 		var map = L.map('map',{
 			center: mappos.center,
