@@ -214,7 +214,7 @@
 		function onEachFeature(feature, layer) {
 		var popupContent = "<p>Référence: " + feature.properties.token + "</br>" +
 				"<img id='vigilo' src='http://api.vigilo.troyesenselle.fr/generate_panel.php?s=1024&token=" + feature.properties.token + "'/></br>"+
-				"<a href='https://twitter.com/search?q=#TCM_" + feature.properties.token + "'>Rechercher sur Twitter</a>"
+				"<a href='https://twitter.com/search?q=%23TCM_" + feature.properties.token + "'>Rechercher sur Twitter</a>"
 				"</p>";
 
 		if (feature.properties && feature.properties.popupContent) {
