@@ -49,7 +49,7 @@
 
 	<script>
 
-		const URL_VIGILO = "http://api.vigilo.troyesenselle.fr"
+		const URL_VIGILO = "https://api.vigilo.troyesenselle.fr"
 
 		var mapbox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoiem91YmlkZGFhYSIsImEiOiItbk16UXlNIn0.DVKhF_zYdBhplHVSK_R71w', {
 			maxZoom: 22,
@@ -212,9 +212,10 @@
 	   }
 	
 		function onEachFeature(feature, layer) {
-		var popupContent = "<p>Référence: " + feature.properties.token + "</br>" +
-				"<img id='vigilo' src='http://api.vigilo.troyesenselle.fr/generate_panel.php?s=1024&token=" + feature.properties.token + "'/></br>"+
-				"<a href='https://twitter.com/search?q=%23TCM_" + feature.properties.token + "'>Rechercher sur Twitter</a>"
+		var popupContent = "<p>Référence: <a href='https://api.vigilo.troyesenselle.fr/generate_panel.php?token=" + feature.properties.token + "'> "+ feature.properties.token +"</a></br>" +
+				"<img id='vigilo' src='https://api.vigilo.troyesenselle.fr/generate_panel.php?s=1024&token=" + feature.properties.token + "'/></br>"+
+				"<a href='https://twitter.com/search?q=%23TCM_" + feature.properties.token + "'>Rechercher sur Twitter</a>"+
+				"</br><a href='https://api.vigilo.troyesenselle.fr/images/" + feature.properties.token + ".jpg'>Zoom sur l'image</a>"+
 				"</p>";
 
 		if (feature.properties && feature.properties.popupContent) {
